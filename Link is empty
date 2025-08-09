@@ -1,0 +1,21 @@
+def __init__(self,pos,val):
+    if pos == 0:
+    new_node = Node(val) #Create new value
+    new_node.next = self.head
+    self.head = new_node 
+    self.size +=1
+
+elif pos <=self.size:
+    new_node = Node(val)
+    cur = self.head #Make temporary current position
+    cur_pos = 0
+    while cur_pos < pos-1:
+          cur = cur.next #Counting
+          cur_pos += 1
+    new_node = cur.next 
+    cur.next = new_node
+    self.size += 1
+
+else:
+    raise Exception("Out of Range")
+    
